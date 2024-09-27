@@ -19,7 +19,11 @@ export default defineConfig({
   ],
   resolve: {
     alias: {
-      '@': fileURLToPath(new URL('./src', import.meta.url))
+      '@': fileURLToPath(new URL('./src', import.meta.url)),
+      '@api': fileURLToPath(new URL('./src/api', import.meta.url)),
+      '@components': fileURLToPath(new URL('./src/components', import.meta.url)),
+      '@views': fileURLToPath(new URL('./src/views', import.meta.url)),
+      '@pages': fileURLToPath(new URL('./src/pages', import.meta.url))
     }
   },
   css: {
@@ -33,5 +37,14 @@ export default defineConfig({
   optimizeDeps: {
     exclude: ['vuetify'],
     entries: ['./src/**/*.vue']
+  },
+  server: {
+    proxy: {
+      '/api': {
+        target: 'http://localhost:9094',
+        changeOrigin: true
+        //rewrite: (path)=>path.replace
+      }
+    }
   }
 });

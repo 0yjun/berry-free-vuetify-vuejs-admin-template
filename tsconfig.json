@@ -2,11 +2,17 @@
   "extends": "@vue/tsconfig/tsconfig.dom.json",
   "include": ["env.d.ts", "src/**/*", "src/**/*.vue", "src/types/.d.ts"],
   "compilerOptions": {
+    "moduleResolution": "node",
     "module": "ESNext",
+    "target": "ESNext",
     "ignoreDeprecations": "5.0",
-    "baseUrl": ".",
+    "baseUrl": "./src",
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["*"],
+      "@api": ["api"],
+      "@components": ["components"],
+      "@views": ["views"],
+      "@pages": ["pages"]
     },
     "allowJs": true
   },

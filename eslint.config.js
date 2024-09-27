@@ -10,6 +10,9 @@ export default [
       parserOptions: {
         parser: '@typescript-eslint/parser'
       }
+    },
+    rules: {
+      '@typescript-eslint/no-explicit-any': 'off'
     }
   },
   pluginJs.configs.recommended,

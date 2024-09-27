@@ -129,14 +129,12 @@ const revenues = ref([
             <v-list lines="two" class="py-0">
               <v-list-item v-for="(revenue, i) in revenues" :key="i" :value="revenue" color="secondary" rounded="sm">
                 <template v-slot:append>
-                  <div
-                    class="bg-lightsuccess rounded-sm d-flex align-center justify-center ml-3"
-                    style="width: 20px; height: 20px"
-                    v-if="revenue.price > 145"
-                  >
+                  <div class="bg-lightsuccess rounded-sm d-flex align-center justify-center ml-3"
+                    style="width: 20px; height: 20px" v-if="revenue.price > 145">
                     <ChevronUpIcon stroke-width="1.5" width="20" class="text-success" />
                   </div>
-                  <div class="bg-lighterror rounded-sm d-flex align-center justify-center ml-3" style="width: 20px; height: 20px" v-else>
+                  <div class="bg-lighterror rounded-sm d-flex align-center justify-center ml-3"
+                    style="width: 20px; height: 20px" v-else>
                     <ChevronDownIcon stroke-width="1.5" width="20" class="text-error" />
                   </div>
                 </template>
@@ -145,7 +143,8 @@ const revenues = ref([
                     <h6 class="text-subtitle-1 text-medium-emphasis font-weight-bold">
                       {{ revenue.name }}
                     </h6>
-                    <span v-if="revenue.price > 145" class="text-success text-subtitle-2">{{ revenue.profit }}% Profit</span>
+                    <span v-if="revenue.price > 145" class="text-success text-subtitle-2">{{ revenue.profit }}%
+                      Profit</span>
                     <span v-else class="text-error text-subtitle-2">{{ revenue.profit }}% Profit</span>
                   </div>
 
@@ -156,8 +155,7 @@ const revenues = ref([
           </perfect-scrollbar>
 
           <div class="text-center mt-3">
-            <v-btn color="primary" variant="text"
-              >View All
+            <v-btn color="primary" variant="text">View All
               <template v-slot:append>
                 <ChevronRightIcon stroke-width="1.5" width="20" />
               </template>

@@ -1,10 +1,18 @@
 <script setup lang="ts">
 // imported components
 import TotalEarning from './components/TotalEarning.vue';
-import TotalOrder from './components/TotalOrder.vue';
+import TotalOrder from './components/TotalOrder.vue'
 import TotalIncome from './components/TotalIncome.vue';
 import TotalGrowth from './components/TotalGrowth.vue';
-import PopularStocks from './components/PopularStocks.vue';
+import PopularStocks from '@views/dashboards/default/DefaultDashboard.vue';
+import useApi from '@api';
+
+const { data, error, isError, isLoading, usePost } = useApi();
+await usePost({
+  url: '/api/category/list-all222', config: { type: 'header' }
+})
+console.group(data.value, error, isError.value, isLoading.value)
+console.log(import.meta.url)
 </script>
 
 <template>
