@@ -4,7 +4,7 @@ import TotalEarning from './components/TotalEarning.vue';
 import TotalOrder from './components/TotalOrder.vue'
 import TotalIncome from './components/TotalIncome.vue';
 import TotalGrowth from './components/TotalGrowth.vue';
-import PopularStocks from '@views/dashboards/default/DefaultDashboard.vue';
+import PopularStocks from '';
 import useApi from '@api';
 
 const { data, error, isError, isLoading, usePost } = useApi();
